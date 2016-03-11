@@ -6,6 +6,11 @@ export default Em.TextField.extend({
     this.$().select();
   },
 
+  keyPress(e) {
+    if (e.which === 13)
+      this.$().blur();
+  },
+
   focusOut() {
     this.attrs['on-update']();
   },
