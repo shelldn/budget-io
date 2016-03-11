@@ -5,15 +5,24 @@ export default Em.Component.extend({
 
   tagName: '',
 
-  @computed('category.incomes.@each.month', 'month.id')
-  income(incomes, monthId) {
-    return incomes
-      .findBy('month.id', monthId);
+  store: Em.inject.service(),
+
+  didReceiveAttrs() {
+    this.get('category.incomes')
+      .then(incomes => {
+        this.set('income', incomes.findBy('month.id', this.get('month.id')) || this.get('store').createRecord('income', { plan: 0, fact: 0, month: this.get('month') }));
+      });
   },
 
   @computed('income')
   hasIncome(income) {
     return !Em.isNone(income);
+  },
+
+  actions: {
+    commit() {
+      this.get('income').save();
+    }
   }
 
 });

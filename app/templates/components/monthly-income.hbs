@@ -1,4 +1,4 @@
 {{#if hasIncome}}
-  <td>{{money-input value=income.plan}}</td>
-  <td>{{money-input value=income.fact}}</td>
+  <td>{{money-input value=income.plan on-update=(action "commit")}}</td>
+  <td>{{money-input value=income.fact on-update=(action "commit")}}</td>
 {{/if}}

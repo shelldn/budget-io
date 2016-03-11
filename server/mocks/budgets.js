@@ -48,9 +48,9 @@ module.exports = function(app) {
         },
         relationships: {
           incomes: {
-            data: [
-              {type: 'incomes', id: 1}
-            ]
+            links: {
+              related: 'incomes'
+            }
           }
         }
       }, {

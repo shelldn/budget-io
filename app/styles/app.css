@@ -1,0 +1,17 @@
+.budget-table {
+  border-collapse: collapse;
+}
+
+.budget-table td,
+.budget-table th {
+  padding: 0;
+  border: 1px solid lightgray;
+}
+
+input {
+  width: 3em;
+  height: 1.8em;
+  padding: 0 .2em;
+  border: 0;
+  text-align: center;
+}
