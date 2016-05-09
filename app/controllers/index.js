@@ -8,15 +8,21 @@ export default Em.Controller.extend({
     return this.store.peekAll('month');
   },
 
-  incomeCategories: [
-    { name: 'Salary' }
-  ],
+  @computed
+  incomeCategories() {
+    return this.store.peekAll('incomeCategory');
+  },
 
-  outgoCategories: [
-    { name: 'Taxes' },
-    { name: 'Rental' },
-    { name: 'Food' },
-    { name: 'Clothes' }
-  ]
+  @computed
+  outgoCategories() {
+    return this.store.peekAll('outgoCategory');
+  },
+
+  actions: {
+
+    addCategory() {
+      this.store.createRecord('incomeCategory', { name: 'New category' });
+    }
+  }
 
 });

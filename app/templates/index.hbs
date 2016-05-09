@@ -28,7 +28,7 @@
   </tr>
 
   {{! Income Categories }}
-  {{#each model.incomeCategories as |category|}}
+  {{#each incomeCategories as |category|}}
     <tr>
       <td>{{category.name}}</td>
       {{#each months as |month|}}
@@ -36,6 +36,12 @@
       {{/each}}
     </tr>
   {{/each}}
+
+  <tr>
+    <td>
+      <a href="javascript:void(0)" {{action "addCategory"}}>Add category</a>
+    </td>
+  </tr>
 
   {{! Outgo Total }}
   <tr>
@@ -46,8 +52,8 @@
     {{/each}}
   </tr>
 
-  {{! Income Categories }}
-  {{#each model.outgoCategories as |category|}}
+  {{! Outgo Categories }}
+  {{#each outgoCategories as |category|}}
     <tr>
       <td>{{category.name}}</td>
       {{#each months as |month|}}
