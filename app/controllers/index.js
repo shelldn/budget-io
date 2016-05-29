@@ -22,6 +22,10 @@ export default Em.Controller.extend({
 
     addCategory() {
       this.store.createRecord('incomeCategory', { name: 'New category' });
+    },
+
+    addOutgoCategory() {
+      this.store.createRecord('outgoCategory', { name: 'New category' });
     }
   }
 

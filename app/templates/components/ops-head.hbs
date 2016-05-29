@@ -1,0 +1,24 @@
+{{! Months }}
+<tr>
+  <th></th>
+  {{#each months as |month|}}
+    <th colspan="2">{{month.name}}</th>
+  {{/each}}
+</tr>
+
+{{! Plan/Fact }}
+<tr>
+  <th></th>
+  {{#each months}}
+    <th>Plan</th>
+    <th>Fact</th>
+  {{/each}}
+</tr>
+
+{{! Totals }}
+<tr>
+  <th></th>
+  {{#each months as |month|}}
+    {{total-amount month.operations}}
+  {{/each}}
+</tr>

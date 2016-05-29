@@ -23,50 +23,8 @@ module.exports = function(app) {
     res.send({
       data: {
         id: 2016,
-        type: 'budgets',
-        relationships: {
-          'income-categories': {
-            data: [
-              { type: 'income-categories', id: 1 },
-              { type: 'income-categories', id: 2 }
-            ]
-          },
-          'outgo-categories': {
-            data: [
-              { type: 'outgo-categories', id: 1 },
-              { type: 'outgo-categories', id: 2 },
-              { type: 'outgo-categories', id: 3 }
-            ]
-          }
-        }
-      },
-      included: [{
-        type: 'income-categories',
-        id: 1,
-        attributes: {
-          name: 'Salary'
-        },
-        relationships: {
-          incomes: {
-            links: {
-              related: 'incomes'
-            }
-          }
-        }
-      }, {
-        type: 'income-categories',
-        id: 2,
-        attributes: {
-          name: 'Bank Account'
-        },
-        relationships: {
-          incomes: {
-            data: [
-              { type: 'incomes', id: 2 }
-            ]
-          }
-        }
-      }]
+        type: 'budgets'
+      }
     });
   });
 

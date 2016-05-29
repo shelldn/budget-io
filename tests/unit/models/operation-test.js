@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('outgo-category', 'Unit | Model | outgo category', {
+moduleForModel('operation', 'Unit | Model | operation', {
   // Specify the other units that are required for this test.
   needs: []
 });

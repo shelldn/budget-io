@@ -3,7 +3,7 @@ import computed from 'ember-computed-decorators';
 
 export default DS.Model.extend({
 
-  incomes: DS.hasMany('income'),
+  operations: DS.hasMany('operation'),
 
   @computed('id')
   name(id) {

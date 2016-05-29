@@ -1,8 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-
-  name    : DS.attr('string'),
-  outgoes : DS.hasMany('outgo')
-
+  
+  type: DS.attr('string')
+  
 });
