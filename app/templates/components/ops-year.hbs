@@ -12,8 +12,7 @@
   <tr>
     <th>{{category.name}}</th>
     {{#each months as |month|}}
-      <td>0</td>
-      <td>0</td>
+      {{operation-by-month month category}}
     {{/each}}
   </tr>
 {{/each}}

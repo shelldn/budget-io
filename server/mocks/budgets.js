@@ -35,8 +35,8 @@ module.exports = function(app) {
     ];
 
     const INCOMES = [
-      { month: 1, plan: 10, fact: 20 },
-      { month: 2, plan: 50, fact: 40 }
+      { month: 1, plan: 10, fact: 20, category: 1 },
+      { month: 2, plan: 50, fact: 40, category: 2 }
     ];
     
     const OUTGOES = [];
@@ -73,7 +73,15 @@ module.exports = function(app) {
           attributes: {
             type: 'income',
             name: c
-          }  
+          },
+          relationships: {
+            operations: {
+              data: [{ 
+                id: i + 1, 
+                type: 'operations' 
+              }]
+            }
+          }
         })).concat(OUTGO_CATEGORIES.map((c, i) => ({
           id: INCOME_CATEGORIES.length + i + 1,
           type: 'categories',
