@@ -26,6 +26,14 @@ module.exports = function(app) {
       'Bank Account'
     ];
     
+    const OUTGO_CATEGORIES = [
+      'Food',
+      'Travel',
+      'Car',
+      'Dog',
+      'Entertainment'
+    ];
+    
     res.send({
       data: {
         id: 2016,
@@ -35,7 +43,10 @@ module.exports = function(app) {
             data: INCOME_CATEGORIES.map((_, i) => ({
               id: i + 1,
               type: 'categories'
-            }))
+            })).concat(OUTGO_CATEGORIES.map((_, i) => ({
+              id: INCOME_CATEGORIES.length + i + 1,
+              type: 'categories'
+            })))
           }
         }
       },
@@ -47,7 +58,14 @@ module.exports = function(app) {
             type: 'income',
             name: c
           }  
-        }))
+        })).concat(OUTGO_CATEGORIES.map((c, i) => ({
+          id: INCOME_CATEGORIES.length + i + 1,
+          type: 'categories',
+          attributes: {
+            type: 'outgo',
+            name: c
+          }
+        })))
     });
   });
 
