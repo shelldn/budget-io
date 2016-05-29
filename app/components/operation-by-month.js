@@ -5,9 +5,11 @@ const OperationByMonthComponent = Ember.Component.extend({
   
   tagName: '',
   
+  store: Ember.inject.service(),
+  
   @computed('month', 'category.operations')
   operation(month, operations) {
-    return operations.findBy('month.id', month.get('id'));
+    return operations.findBy('month.id', month.get('id')) || this.get('store').createRecord('operation', { type: this.get('category.type'), month: month.get('id') });
   }
   
 });
