@@ -23,7 +23,8 @@ module.exports = function(app) {
     
     const INCOME_CATEGORIES = [
       'Salary',
-      'Bank Account'
+      'Bank Account',
+      'Investing'
     ];
     
     const OUTGO_CATEGORIES = [
@@ -36,7 +37,8 @@ module.exports = function(app) {
 
     const INCOMES = [
       { month: 1, plan: 10, fact: 20, category: 1 },
-      { month: 2, plan: 50, fact: 40, category: 2 }
+      { month: 2, plan: 50, fact: 40, category: 2 },
+      { month: 2, plan: 30, fact: 30, category: 3 }
     ];
     
     const OUTGOES = [];

@@ -9,7 +9,18 @@ const OperationByMonthComponent = Ember.Component.extend({
   
   @computed('month', 'category.operations')
   operation(month, operations) {
-    return operations.findBy('month.id', month.get('id')) || this.get('store').createRecord('operation', { type: this.get('category.type'), month: month.get('id') });
+    return operations.findBy('month.id', month.get('id')) ||
+      this.get('store')
+        .createRecord('operation', { 
+          type: this.get('category.type'), 
+          month
+        });
+  },
+  
+  actions: {
+    commit() {
+      this.get('operation').save();
+    }
   }
   
 });
