@@ -33,6 +33,13 @@ module.exports = function(app) {
       'Dog',
       'Entertainment'
     ];
+
+    const INCOMES = [
+      { month: 1, plan: 10, fact: 20 },
+      { month: 2, plan: 50, fact: 40 }
+    ];
+    
+    const OUTGOES = [];
     
     res.send({
       data: {
@@ -46,6 +53,15 @@ module.exports = function(app) {
             })).concat(OUTGO_CATEGORIES.map((_, i) => ({
               id: INCOME_CATEGORIES.length + i + 1,
               type: 'categories'
+            })))
+          },
+          operations: {
+            data: INCOMES.map((_, i) => ({
+              id: i + 1,
+              type: 'operations'
+            })).concat(OUTGOES.map((_, i) => ({
+              id: INCOMES.length + i + 1,
+              type: 'operations'
             })))
           }
         }
@@ -64,6 +80,20 @@ module.exports = function(app) {
           attributes: {
             type: 'outgo',
             name: c
+          }
+        }))).concat(INCOMES.map((op, i) => ({
+          id: i + 1,
+          type: 'operations',
+          attributes: {
+            plan: op.plan,
+            fact: op.fact
+          },
+          relationships: {
+            month: {
+              data: {
+                id: op.month, type: 'months'
+              }
+            }
           }
         })))
     });
