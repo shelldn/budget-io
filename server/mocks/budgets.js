@@ -20,11 +20,34 @@ module.exports = function(app) {
   });
 
   budgetsRouter.get('/:id', function(req, res) {
+    
+    const INCOME_CATEGORIES = [
+      'Salary',
+      'Bank Account'
+    ];
+    
     res.send({
       data: {
         id: 2016,
-        type: 'budgets'
-      }
+        type: 'budgets',
+        relationships: {
+          categories: {
+            data: INCOME_CATEGORIES.map((_, i) => ({
+              id: i + 1,
+              type: 'categories'
+            }))
+          }
+        }
+      },
+      included:
+        INCOME_CATEGORIES.map((c, i) => ({
+          id: i + 1,
+          type: 'categories',
+          attributes: {
+            type: 'income',
+            name: c
+          }  
+        }))
     });
   });
 
