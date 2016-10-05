@@ -12,6 +12,7 @@ module.exports = function(defaults) {
   });
 
   app.import('bower_components/moment/moment.js');
+  app.import('bower_components/oidc-client/dist/oidc-client.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
