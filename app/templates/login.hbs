@@ -1,9 +1,5 @@
-{{#if session.isAuthenticated}}
-  Logged In
-{{/if}}
-
 <form {{action "authenticate" on="submit"}}>
   {{input value=username}}
-  {{input value=password}}
+  {{input type="password" value=password}}
   <button type="submit">Login</button>
 </form>
