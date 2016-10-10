@@ -4,11 +4,17 @@
 
 .budget-table td,
 .budget-table th {
+  font-weight: normal;
   padding: 0;
   border: 1px solid lightgray;
+  font-size: 14px;
 }
 
-input {
+.outgo-row {
+  background-color: red;
+}
+
+.active-cell input {
   width: 3em;
   height: 1.8em;
   padding: 0 .2em;

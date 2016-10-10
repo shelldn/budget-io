@@ -1,1 +1,4 @@
+{{#if session.isAuthenticated}}
+  <button type="button" {{action "logout"}}>Logout</button>
+{{/if}}
 {{outlet}}
