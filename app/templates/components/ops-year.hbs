@@ -10,7 +10,7 @@
 {{! Category operations }}
 {{#each categories as |category|}}
   <tr>
-    <th>{{category.name}}</th>
+    {{active-cell value=category.name on-change=(action "commit")}}
     {{#each months as |month|}}
       {{operation-by-month month category}}
     {{/each}}

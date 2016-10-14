@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'style-src'   : "'self' 'unsafe-inline'",
+      'script-src'  : "'self' 'unsafe-eval' shelldn-ubuntu.westeurope.cloudapp.azure.com:49152",
+      'font-src'    : "'self' fonts.googleapis.com fonts.gstatic.com",
+      'connect-src' : "'self' budgetio.azurewebsites.net"
+    },
     modulePrefix: 'web-client',
     environment: environment,
     baseURL: '/',
