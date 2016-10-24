@@ -8,6 +8,12 @@ const OpsYearComponent = Ember.Component.extend({
   @computed('categorySet', 'type')
   categories(categorySet, type) {
     return categorySet.filterBy('type', type);
+  },
+
+  actions: {
+    commit(category) {
+      category.save();
+    }
   }
 
 });
