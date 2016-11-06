@@ -6,6 +6,12 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    id: {
+      host: 'http://budgetid.azurewebsites.net'
+    },
+    api: {
+      host: 'http://budgetio.azurewebsites.net'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +26,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.api.host = 'http://localhost:52778';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
