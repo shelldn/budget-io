@@ -15,10 +15,12 @@ const OperationByMonthComponent = Em.Component.extend({
 
     if (typeof op === 'undefined')
       Em.run.scheduleOnce('afterRender', this, () => {
-        this.get('store').createRecord('operation', {
+        const op = this.get('store').createRecord('operation', {
           type: this.get('category.type'),
           month: this.get('month')
         });
+
+        operations.addObject(op);
       });
   },
   
