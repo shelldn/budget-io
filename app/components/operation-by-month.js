@@ -1,9 +1,11 @@
-import Ember from 'ember';
+import Em from 'ember';
 import computed from 'ember-computed-decorators';
 
-const OperationByMonthComponent = Ember.Component.extend({
+const OperationByMonthComponent = Em.Component.extend({
   
   tagName: '',
+
+  store: Em.inject.service(),
   
   didReceiveAttrs() {
     const operations = this.get('category.operations');
@@ -12,7 +14,12 @@ const OperationByMonthComponent = Ember.Component.extend({
     const op = operations.findBy('month.id', monthId);
 
     if (typeof op === 'undefined')
-      this.attrs['on-init'](this.get('category.type'), this.get('month'));
+      Em.run.scheduleOnce('afterRender', this, () => {
+        this.get('store').createRecord('operation', {
+          type: this.get('category.type'),
+          month: this.get('month')
+        });
+      });
   },
   
   @computed('month', 'category.operations')
