@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'web-client',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     id: {
       host: 'http://budgetid.azurewebsites.net'
     },

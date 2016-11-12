@@ -5,16 +5,19 @@ const OperationByMonthComponent = Ember.Component.extend({
   
   tagName: '',
   
-  store: Ember.inject.service(),
+  didReceiveAttrs() {
+    const operations = this.get('category.operations');
+    const monthId = this.get('month.id');
+
+    const op = operations.findBy('month.id', monthId);
+
+    if (typeof op === 'undefined')
+      this.attrs['on-init'](this.get('category.type'), this.get('month'));
+  },
   
   @computed('month', 'category.operations')
   operation(month, operations) {
-    return operations.findBy('month.id', month.get('id'));/* ||
-      this.get('store')
-        .createRecord('operation', { 
-          type: this.get('category.type'), 
-          month
-        });*/
+    return operations.findBy('month.id', month.get('id'));
   },
   
   actions: {

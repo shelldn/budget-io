@@ -12,7 +12,7 @@
   <tr>
     {{active-cell value=category.name on-update=(action "commit" category)}}
     {{#each months as |month|}}
-      {{operation-by-month month category}}
+      {{operation-by-month month category on-init=(action "init")}}
     {{/each}}
   </tr>
 {{/each}}
