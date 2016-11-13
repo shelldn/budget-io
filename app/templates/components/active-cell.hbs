@@ -1,7 +1,7 @@
 {{#if isEditing}}
   {{input class="active-cell_editor" value=value}}
 {{else}}
-  <span class="active-cell__display">
+  <span {{action "showEditor" on="doubleClick"}}>
     {{value}}
   </span>
 {{/if}}

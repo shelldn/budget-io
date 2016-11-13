@@ -11,17 +11,11 @@ export default Ember.Component.extend({
     this.attrs['on-update']();
   },
 
-  displayDoubleClick(e) {
-    e.preventDefault();
-    this.set('isEditing', true);
-  },
+  actions: {
 
-  didInsertElement() {
-    this.$('.active-cell__display').dblclick(this.displayDoubleClick.bind(this));
-  },
-
-  willDestroyElement() {
-    this.$('.active-cell__display').off('dblclick');
+    showEditor() {
+      this.set('isEditing', true);
+    }
   }
 
 });
