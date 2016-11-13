@@ -18,6 +18,10 @@ const ActiveCellInputComponent = Em.TextField.extend({
     this._super(...arguments);
     this.$().focus();
     this.$().select();
+  },
+
+  _elementValueDidChange() {
+    this.set('value', parseFloat(this.readDOMAttr('value')) || 0);
   }
 
 });
