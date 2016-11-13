@@ -2,7 +2,7 @@ import Em from 'ember';
 
 const ActiveCellInputComponent = Em.TextField.extend({
 
-  attributeBindings: ['isDisabled:disabled'],
+  attributeBindings: ['disabled'],
 
   classNames: ['active-cell__input'],
 
@@ -15,6 +15,7 @@ const ActiveCellInputComponent = Em.TextField.extend({
   },
 
   didInsertElement() {
+    this._super(...arguments);
     this.$().focus();
     this.$().select();
   }
@@ -24,7 +25,7 @@ const ActiveCellInputComponent = Em.TextField.extend({
 
 ActiveCellInputComponent.reopenClass({
 
-  positionalParams: ['isDisabled', 'value']
+  positionalParams: ['disabled']
 
 });
 
