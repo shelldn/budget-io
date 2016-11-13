@@ -1,2 +1,7 @@
-{{!value}}
-{{input class="active-cell__input" value=value}}
+{{#if isEditing}}
+  {{input class="active-cell_editor" value=value}}
+{{else}}
+  <span class="active-cell__display">
+    {{value}}
+  </span>
+{{/if}}
