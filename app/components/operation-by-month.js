@@ -31,7 +31,7 @@ const OperationByMonthComponent = Em.Component.extend({
   
   actions: {
     commit() {
-      this.get('operation').save();
+      return this.get('operation').save();
     }
   }
   

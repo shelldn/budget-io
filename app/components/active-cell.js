@@ -7,14 +7,18 @@ export default Ember.Component.extend({
 
   isEditing: false,
 
-  focusOut() {
-    this.attrs['on-update']();
-  },
-
   actions: {
 
     showEditor() {
       this.set('isEditing', true);
+    },
+
+    commit() {
+      return this.get('on-change')();
+    },
+
+    hideEditor() {
+      this.set('isEditing', false);
     }
   }
 

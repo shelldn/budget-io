@@ -10,7 +10,7 @@
 {{! Category operations }}
 {{#each categories as |category|}}
   <tr>
-    {{active-cell value=category.name on-update=(action "commit" category)}}
+    {{active-cell disabled=category.isSaving value=category.name on-change=(action "commit" category)}}
     {{#each months as |month|}}
       {{operation-by-month month category}}
     {{/each}}

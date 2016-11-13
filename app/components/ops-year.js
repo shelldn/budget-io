@@ -12,7 +12,7 @@ const OpsYearComponent = Ember.Component.extend({
 
   actions: {
     commit(category) {
-      category.save();
+      return category.save();
     },
   }
 

@@ -1,2 +1,2 @@
-{{active-cell value=operation.plan on-update=(action "commit")}}
-{{active-cell value=operation.fact on-update=(action "commit")}}
+{{active-cell disabled=operation.isSaving value=operation.plan on-change=(action "commit")}}
+{{active-cell disabled=operation.isSaving value=operation.fact on-change=(action "commit")}}
