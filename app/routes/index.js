@@ -4,7 +4,11 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Em.Route.extend(AuthenticatedRouteMixin, {
 
   model() {
-    return this.store.findRecord('budget', 2016);
+    return this.store.findRecord('budget', 2016)
+      .then(b => {
+        b.get('operations');
+        return b;
+      });
   }
 
 });
