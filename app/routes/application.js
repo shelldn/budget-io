@@ -3,6 +3,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
 
+  /*
   model() {
 
     [...Array(12).keys()]
@@ -10,5 +11,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
     return this.store.peekAll('month');
   }
+  */
 
 });
