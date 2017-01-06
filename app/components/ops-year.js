@@ -5,6 +5,11 @@ const OpsYearComponent = Ember.Component.extend({
   
   tagName: 'tbody',
 
+  @computed('type')
+  headerClass(type) {
+    return `budget-table__${type}-header`;
+  },
+
   @computed('categorySet', 'type')
   categories(categorySet, type) {
     return categorySet.filterBy('type', type);
