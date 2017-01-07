@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   tagName: 'tr',
 
+  categoryManager: Ember.inject.service(),
   monthsProvider: Ember.inject.service(),
 
   isEditing: false,
@@ -17,6 +18,16 @@ export default Ember.Component.extend({
   actions: {
     showEditor() {
       this.set('isEditing', true);
+    },
+
+    commit(name) {
+      const { budget, type } = this.getProperties('budget', 'type');
+
+      this.get('categoryManager').create({
+        name,
+        type,
+        budget
+      })
     }
   }
 

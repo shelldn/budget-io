@@ -1,5 +1,5 @@
 {{#if isEditing}}
-  {{add-category-input}}
+  {{add-category-input on-change=(action "commit")}}
 {{else}}
   <a href="#" {{action "showEditor"}}>Add category</a>
 {{/if}}

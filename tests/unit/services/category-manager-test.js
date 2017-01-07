@@ -1,12 +1,12 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('adapter:category', 'Unit | Adapter | category', {
+moduleFor('service:category-manager', 'Unit | Service | category manager', {
   // Specify the other units that are required for this test.
-  // needs: ['serializer:foo']
+  // needs: ['service:foo']
 });
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
-  let adapter = this.subject();
-  assert.ok(adapter);
+  let service = this.subject();
+  assert.ok(service);
 });

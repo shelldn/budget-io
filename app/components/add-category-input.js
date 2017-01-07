@@ -6,6 +6,13 @@ export default Em.TextField.extend({
 
   placeholder: 'New Category',
 
+  keyDown(e) {
+    switch (e.keyCode) {
+      case 13:
+        this.get('on-change')(e.target.value);
+    }
+  },
+
   didInsertElement() {
     this._super(...arguments);
     this.$().focus();
