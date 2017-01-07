@@ -12,7 +12,9 @@
   <tr>
     <td>
       {{category.name}}
-      <i class="fa fa-trash-o"></i>
+      <a href="#" {{action "deleteCategory" category}}>
+        <i class="fa fa-trash-o"></i>
+      </a>
     </td>
     {{#each months as |month|}}
       {{operation-by-month month category}}

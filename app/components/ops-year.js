@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Em from 'ember';
 import computed from 'ember-computed-decorators';
 
-const OpsYearComponent = Ember.Component.extend({
+const OpsYearComponent = Em.Component.extend({
   
   tagName: 'tbody',
 
@@ -19,6 +19,10 @@ const OpsYearComponent = Ember.Component.extend({
     commit(category) {
       return category.save();
     },
+
+    deleteCategory(category) {
+      category.destroyRecord();
+    }
   }
 
 });
