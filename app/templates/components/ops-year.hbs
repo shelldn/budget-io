@@ -10,12 +10,7 @@
 {{! Category operations }}
 {{#each categories as |category|}}
   <tr>
-    <td>
-      {{category.name}}
-      <a href="#" {{action "deleteCategory" category}}>
-        <i class="fa fa-trash-o"></i>
-      </a>
-    </td>
+    {{edit-category category=category}}
     {{#each months as |month|}}
       {{operation-by-month month category}}
     {{/each}}
