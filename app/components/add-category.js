@@ -5,27 +5,18 @@ export default Ember.Component.extend({
 
   tagName: 'tr',
 
-  store: Ember.inject.service(),
   monthsProvider: Ember.inject.service(),
+
+  isEditing: false,
 
   @computed
   months() {
     return this.get('monthsProvider').getAll();
   },
 
-  didReceiveAttrs() {
-    const { store, type } = this.getProperties('store', 'type');
-
-    const budget = store.peekRecord('budget', 2016);
-    const category = this.get('store').createRecord('category', { budget, type });
-
-    this.set('category', category);
-  },
-
   actions: {
-
-    commit() {
-      return this.get('category').save();
+    showEditor() {
+      this.set('isEditing', true);
     }
   }
 
