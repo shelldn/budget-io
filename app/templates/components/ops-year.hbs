@@ -10,7 +10,7 @@
 {{! Category operations }}
 {{#each categories as |category|}}
   <tr>
-    {{edit-category category=category}}
+    {{edit-category category}}
     {{#each months as |month|}}
       {{operation-by-month month category}}
     {{/each}}

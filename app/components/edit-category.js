@@ -1,7 +1,7 @@
 import Em from 'ember';
 import { reads } from 'ember-computed-decorators';
 
-export default Em.Component.extend({
+const EditCategoryComponent = Em.Component.extend({
 
   tagName: 'td',
   classNames: 'active-cell',
@@ -23,3 +23,11 @@ export default Em.Component.extend({
   }
 
 });
+
+EditCategoryComponent.reopenClass({
+
+  positionalParams: ['category']
+
+});
+
+export default EditCategoryComponent;
