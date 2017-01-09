@@ -1,5 +1,5 @@
 import Em from 'ember';
-import { reads } from 'ember-computed-decorators';
+import { alias } from 'ember-computed-decorators';
 
 const EditCategoryComponent = Em.Component.extend({
 
@@ -8,13 +8,19 @@ const EditCategoryComponent = Em.Component.extend({
 
   isEditing: false,
 
-  @reads('category.name')
+  @alias('category.name')
   value,
 
   actions: {
 
     showEditor() {
       this.set('isEditing', true);
+    },
+
+    commit() {
+      this.get('category')
+        .save()
+        .then(() => this.set('isEditing', false));
     },
 
     hideEditor() {

@@ -1,5 +1,5 @@
 {{#if isEditing}}
-  {{active-cell-input disabled value=value on-change=(action "commit") on-complete=(action "hideEditor")}}
+  {{active-cell-input disabled=false value=value on-change=(action "commit")}}
 {{else}}
   <div {{action "showEditor" on="doubleClick"}}>
     {{value}}
