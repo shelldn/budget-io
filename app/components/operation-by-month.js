@@ -15,9 +15,9 @@ const OperationByMonthComponent = Em.Component.extend({
 
     if (!op)
       Em.run.scheduleOnce('afterRender', this, () => {
-        const { category, month, operationManager } = this.getProperties('category', 'month', 'operationManager');
+        const { budget, category, month, operationManager } = this.getProperties('budget', 'category', 'month', 'operationManager');
 
-        const op = operationManager.init({ category, month });
+        const op = operationManager.init({ budget, category, month });
 
         operations.addObject(op);
       });
@@ -38,7 +38,7 @@ const OperationByMonthComponent = Em.Component.extend({
 
 OperationByMonthComponent.reopenClass({
   
-  positionalParams: ['month', 'category']
+  positionalParams: ['budget', 'category', 'month']
   
 });
 
