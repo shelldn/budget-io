@@ -1,8 +1,10 @@
-{{#if isEditing}}
-  {{add-category-input on-change=(action "commit")}}
-{{else}}
-  <a href="#" {{action "showEditor"}}>Add category</a>
-{{/if}}
+<td>
+  {{#if isEditing}}
+    {{add-category-input on-change=(action "commit")}}
+  {{else}}
+    <a href="#" {{action "showEditor"}}>Add category</a>
+  {{/if}}
+</td>
 
 {{#each months}}
   <td></td>

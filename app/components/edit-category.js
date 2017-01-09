@@ -4,7 +4,6 @@ import { alias } from 'ember-computed-decorators';
 const EditCategoryComponent = Em.Component.extend({
 
   tagName: 'td',
-  classNames: 'active-cell',
 
   isEditing: false,
 
