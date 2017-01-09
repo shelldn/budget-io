@@ -7,7 +7,7 @@ export default DS.Model.extend({
 
   @computed('id')
   name(id) {
-    return moment.monthsShort()[id - 1];
+    return moment.months()[id];
   }
 
 });

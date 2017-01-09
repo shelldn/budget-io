@@ -1,0 +1,18 @@
+.budget-table {
+  border-collapse: collapse;
+
+  td, th {
+    padding: 2px;
+    border: 1px solid $color-gray;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  &__income-header {
+    background-color: honeydew;
+  }
+
+  &__outgo-header {
+    background-color: blanchedalmond;
+  }
+}

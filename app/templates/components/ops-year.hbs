@@ -1,5 +1,5 @@
 {{! Totals }}
-<tr>
+<tr class={{headerClass}}>
   <td></td>
   {{#each months}}
     <th>0</th>
@@ -10,9 +10,10 @@
 {{! Category operations }}
 {{#each categories as |category|}}
   <tr>
-    <th>{{category.name}}</th>
+    {{edit-category category}}
     {{#each months as |month|}}
       {{operation-by-month month category}}
     {{/each}}
   </tr>
 {{/each}}
+{{add-category budget=budget type=type}}

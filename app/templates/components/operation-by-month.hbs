@@ -1,2 +1,2 @@
-<td class="active-cell">{{money-input value=operation.plan on-update=(action "commit")}}</td>
-<td class="active-cell">{{money-input value=operation.fact on-update=(action "commit")}}</td>
+{{active-cell disabled=operation.isSaving value=operation.plan on-change=(action "commit")}}
+{{active-cell disabled=operation.isSaving value=operation.fact on-change=(action "commit")}}
