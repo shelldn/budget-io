@@ -1,9 +1,11 @@
-import Ember from 'ember';
+import Em from 'ember';
 
-export default Ember.Service.extend({
+export default Em.Service.extend({
+
+  store: Em.inject.service(),
 
   getAll() {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    return this.get('store').peekAll('month');
   }
 
 });
