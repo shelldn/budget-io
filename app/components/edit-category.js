@@ -23,6 +23,14 @@ const EditCategoryComponent = Em.Component.extend({
         .then(() => this.set('isEditing', false));
     },
 
+    delete() {
+      if (!confirm('Delete category?'))
+        return;
+
+      this.get('category')
+        .destroyRecord();
+    },
+
     hideEditor() {
       this.set('isEditing', false);
     }

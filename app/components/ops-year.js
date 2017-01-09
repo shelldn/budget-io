@@ -18,10 +18,6 @@ const OpsYearComponent = Em.Component.extend({
   actions: {
     commit(category) {
       return category.save();
-    },
-
-    deleteCategory(category) {
-      category.destroyRecord();
     }
   }
 
