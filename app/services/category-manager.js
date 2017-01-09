@@ -6,7 +6,7 @@ export default Em.Service.extend({
 
   create(props) {
     const category = this.get('store').createRecord('category', props);
-    category.save();
+    return category.save();
   }
 
 });

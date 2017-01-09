@@ -23,11 +23,12 @@ export default Ember.Component.extend({
     commit(name) {
       const { budget, type } = this.getProperties('budget', 'type');
 
-      this.get('categoryManager').create({
+      return this.get('categoryManager').create({
         name,
         type,
         budget
       })
+        .then(() => this.set('isEditing', false));
     }
   }
 
