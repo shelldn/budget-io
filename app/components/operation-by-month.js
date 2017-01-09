@@ -5,7 +5,7 @@ const OperationByMonthComponent = Em.Component.extend({
   
   tagName: '',
 
-  store: Em.inject.service(),
+  operationManager: Em.inject.service(),
   
   didReceiveAttrs() {
     const operations = this.get('category.operations');
@@ -13,12 +13,11 @@ const OperationByMonthComponent = Em.Component.extend({
 
     const op = operations.findBy('month.id', monthId);
 
-    if (typeof op === 'undefined')
+    if (!op)
       Em.run.scheduleOnce('afterRender', this, () => {
-        const op = this.get('store').createRecord('operation', {
-          type: this.get('category.type'),
-          month: this.get('month')
-        });
+        const { category, month, operationManager } = this.getProperties('category', 'month', 'operationManager');
+
+        const op = operationManager.init({ category, month });
 
         operations.addObject(op);
       });
