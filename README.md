@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shelldn/budget-io.svg?branch=develop)](https://travis-ci.org/shelldn/budget-io)
+
 # Web-client
 
 This README outlines the details of collaborating on this Ember application.
