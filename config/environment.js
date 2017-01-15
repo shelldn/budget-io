@@ -7,10 +7,10 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'hash',
     id: {
-      host: 'http://budgetid.azurewebsites.net'
+      host: 'http://budget-id.azurewebsites.net'
     },
     api: {
-      host: 'http://budgetio.azurewebsites.net'
+      host: 'http://budget-api.azurewebsites.net'
     },
     EmberENV: {
       FEATURES: {
