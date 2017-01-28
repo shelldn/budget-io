@@ -1,5 +1,9 @@
 .active-cell {
 
+  &--zero {
+    color: #ccc;
+  }
+
   &__input {
     width: 70px;
   }
