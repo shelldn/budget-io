@@ -2,10 +2,14 @@
   border-collapse: collapse;
 
   td, th {
-    padding: 2px;
+    padding: 3px 7px;
     border: 1px solid $color-gray;
     text-align: center;
     font-weight: normal;
+
+    &:first-child {
+      text-align: left;
+    }
   }
 
   &__income-header {
