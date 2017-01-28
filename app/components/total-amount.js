@@ -1,16 +1,21 @@
 import Ember from 'ember';
-import { mapBy, sum } from 'ember-computed-decorators';
+import { filter, mapBy, sum } from 'ember-computed-decorators';
 
 const TotalAmountComponent = Ember.Component.extend({
   
   tagName: '',
-  
-  @mapBy('operations', 'plan')
+
+  @filter('operations', function(o) {
+    return o.get('category.type') === this.get('type');
+  })
+  _operations,
+
+  @mapBy('_operations', 'plan')
   _plans,
   
-  @mapBy('operations', 'fact')
+  @mapBy('_operations', 'fact')
   _facts,
-  
+
   @sum('_plans')
   plan,
   
@@ -21,7 +26,7 @@ const TotalAmountComponent = Ember.Component.extend({
 
 TotalAmountComponent.reopenClass({
   
-  positionalParams: ['operations']
+  positionalParams: ['operations', 'type']
   
 });
 

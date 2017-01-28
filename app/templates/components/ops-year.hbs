@@ -1,9 +1,8 @@
 {{! Totals }}
 <tr class={{headerClass}}>
   <td></td>
-  {{#each months}}
-    <th>0</th>
-    <th>0</th>
+  {{#each months as |month|}}
+    {{total-amount month.operations type}}
   {{/each}}
 </tr>
 
