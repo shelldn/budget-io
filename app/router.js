@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
+  this.route('budget', { path: ':budget_id' });
 });
 
 export default Router;
