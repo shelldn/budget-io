@@ -1,0 +1,11 @@
+.edit-category {
+
+  &:hover &__trash {
+    visibility: visible;
+  }
+
+  &__trash {
+    float: right;
+    visibility: hidden;
+  }
+}
