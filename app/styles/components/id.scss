@@ -1,11 +1,29 @@
 .id {
+  margin: 0 auto;
+  width: 300px;
+
+  &__row + &__row {
+    display: block;
+    margin-top: $spacing-base;
+  }
+
+  &__greeting {
+    margin: 0 0 $spacing-base;
+    padding: 0;
+    color: $color-base;
+  }
 
   &__textbox {
     padding: 0 $padding-small;
     outline: none;
     border: $border-width-large solid $color-base;
+    width: 100%;
     height: $row-height-base;
     box-sizing: border-box;
+
+    &:focus {
+      border-color: lighten($color-base, 5%);
+    }
   }
 
   &__button {
@@ -16,5 +34,11 @@
     background: $color-base;
     color: darken($color-base, 20%);
     box-sizing: border-box;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($color-base, 5%);
+    }
   }
 }
