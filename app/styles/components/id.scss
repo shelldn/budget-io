@@ -1,0 +1,20 @@
+.id {
+
+  &__textbox {
+    padding: 0 $padding-small;
+    outline: none;
+    border: $border-width-large solid $color-base;
+    height: $row-height-base;
+    box-sizing: border-box;
+  }
+
+  &__button {
+    padding: 0 $padding-base;
+    outline: none;
+    border: none;
+    height: $row-height-base;
+    background: $color-base;
+    color: darken($color-base, 20%);
+    box-sizing: border-box;
+  }
+}
