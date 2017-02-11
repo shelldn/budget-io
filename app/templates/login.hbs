@@ -1,14 +1,16 @@
-<section class="id">
-  <h1 class="id__greeting">Welcome!</h1>
-  <form {{action "authenticate" on="submit"}}>
-    <div class="id__row">
-      {{input class="id__textbox" placeholder="Username" value=username}}
-    </div>
-    <div class="id__row">
-      {{input class="id__textbox" placeholder="Password" type="password" value=password}}
-    </div>
-    <div class="id__row">
-      <button class="id__button" type="submit">Login</button>
-    </div>
-  </form>
-</section>
+<div class="id-wrapper">
+  <section class="id">
+    <h1 class="id__greeting">Welcome!</h1>
+    <form {{action "authenticate" on="submit"}}>
+      <div class="id__row">
+        {{input class="id__textbox" placeholder="Username" value=username}}
+      </div>
+      <div class="id__row">
+        {{input class="id__textbox" placeholder="Password" type="password" value=password}}
+      </div>
+      <div class="id__row">
+        <button class="id__button" type="submit">Login</button>
+      </div>
+    </form>
+  </section>
+</div>
