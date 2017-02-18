@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'web-client/config/environment';
 
 export default Ember.Controller.extend({
 
@@ -12,9 +13,13 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:oauth2', username, password, 'api');
     },
 
-    register(username, password, passwordConfirm) {
-      console.log(username, password, passwordConfirm);
-      return Promise.resolve();
+    register(...data) {
+      return $.ajax({
+        method: 'POST',
+        url: `${ENV.id.host}/register`,
+        contentType: 'application/json',
+        data
+      });
     }
   }
 
