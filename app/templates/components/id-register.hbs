@@ -1,16 +1,14 @@
 <h3 class="id__greeting">Register</h3>
-<form {{action "submit" on="submit" }}>
+<form {{action "submit" on="submit"}}>
   <fieldset disabled={{isDisabled}}>
     <div class="id__row">
-      {{input class="id__textbox" placeholder="Email" value=username }}
+      {{input class="id__textbox" placeholder="Email" value=username}}
     </div>
     <div class="id__row">
-      {{input class="id__textbox" placeholder="Password" type="password" value=password
-      }}
+      {{input class="id__textbox" placeholder="Password" type="password" value=password}}
     </div>
     <div class="id__row">
-      {{input class="id__textbox" placeholder="Password confirmation" type="password"
-      value=passwordConfirm }}
+      {{input class="id__textbox" placeholder="Password confirmation" type="password" value=passwordConfirmation}}
     </div>
     <div class="id__row">
       <button class="id__button" type="submit">Register</button>

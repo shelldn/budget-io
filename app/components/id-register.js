@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(EmberValidations, {
 
   tagName: 'section',
 
@@ -8,18 +9,24 @@ export default Ember.Component.extend({
 
   isDisabled: false,
 
+  validations: {
+    password: {
+      confirmation: true
+    }
+  },
+
   actions: {
 
     submit() {
       const {
         username,
         password,
-        passwordConfirm
-      } = this.getProperties('username', 'password', 'passwordConfirm');
+        passwordConfirmation
+      } = this.getProperties('username', 'password', 'passwordConfirmation');
 
       this.set('isDisabled', true);
 
-      this.get('onSubmit')(username, password, passwordConfirm)
+      this.get('onSubmit')(username, password, passwordConfirmation)
         .then(() => {
           this.set('isDisabled', false);
         });
