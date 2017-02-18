@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
 
     register(username, password, passwordConfirm) {
       console.log(username, password, passwordConfirm);
+      return Promise.resolve();
     }
   }
 
