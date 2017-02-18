@@ -27,7 +27,7 @@ export default Ember.Component.extend(EmberValidations, {
       this.set('isDisabled', true);
 
       this.get('onSubmit')(username, password, passwordConfirmation)
-        .then(() => {
+        .always(() => {
           this.set('isDisabled', false);
         });
     }

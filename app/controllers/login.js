@@ -13,12 +13,16 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:oauth2', username, password, 'api');
     },
 
-    register(...data) {
+    register(username, password, passwordConfirmation) {
       return $.ajax({
         method: 'POST',
         url: `${ENV.id.host}/register`,
         contentType: 'application/json',
-        data
+        data: JSON.stringify({
+          username,
+          password,
+          passwordConfirmation
+        })
       });
     }
   }
