@@ -1,0 +1,29 @@
+<h3 class="id__greeting">Register</h3>
+<form {{action "submit" on="submit" }}>
+  <div class="id__row">
+    {{input
+      class="id__textbox"
+      placeholder="Email"
+      value=username
+    }}
+  </div>
+  <div class="id__row">
+    {{input
+      class="id__textbox"
+      placeholder="Password"
+      type="password"
+      value=password
+    }}
+  </div>
+  <div class="id__row">
+    {{input
+      class="id__textbox"
+      placeholder="Password confirmation"
+      type="password"
+      value=passwordConfirm
+    }}
+  </div>
+  <div class="id__row">
+    <button class="id__button" type="submit">Register</button>
+  </div>
+</form>
