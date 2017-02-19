@@ -1,6 +1,8 @@
-<h2>{{model.id}}</h2>
+<header>
+  <h2 class="main__year">{{model.id}}</h2>
+</header>
 
-<table class="budget-table">
+<table class="main__table budget-table">
 
   {{ops-head months}}
   {{ops-year model.months model.categories budget=model type="income"}}

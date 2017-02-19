@@ -1,4 +1,13 @@
 .main {
   position: relative;
-  left: $sidebar-width + $spacing-large;
+  left: $sidebar-width;
+  padding: $spacing-large;
+
+  &__year {
+    margin: 0;
+  }
+
+  &__table {
+    margin-top: $spacing-large;
+  }
 }

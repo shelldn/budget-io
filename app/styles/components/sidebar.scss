@@ -2,8 +2,13 @@
   position: fixed;
   top: 0;
   bottom: 0;
+  padding: $spacing-large 0;
   width: $sidebar-width;
   background-color: $color-aux;
   text-align: center;
   z-index: 999;
+
+  &__button {
+    color: desaturate($color-base, 35%);
+  }
 }
