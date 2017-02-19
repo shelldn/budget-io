@@ -3,11 +3,13 @@
 @import "config/constraints.scss";
 @import "config/colors.scss";
 
+@import "components/sidebar.scss";
 @import "components/table.scss";
 @import "components/active-cell.scss";
 @import "components/edit-category.scss";
 @import "components/screen.scss";
 @import "components/id.scss";
+@import "components/main.scss";
 
 body {
   font-family: 'Roboto', sans-serif;

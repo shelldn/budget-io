@@ -1,4 +1,6 @@
-{{#if session.isAuthenticated}}
-  <button type="button" {{action "logout"}}>Logout</button>
-{{/if}}
-{{outlet}}
+<aside class="sidebar">
+  <a href="javascript:void(0)" {{action "logout"}}>Logout</a>
+</aside>
+<div class="main">
+  {{outlet}}
+</div>

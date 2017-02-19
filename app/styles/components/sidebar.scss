@@ -1,0 +1,9 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: $sidebar-width;
+  background-color: $color-aux;
+  text-align: center;
+  z-index: 999;
+}
