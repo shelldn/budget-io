@@ -1,5 +1,11 @@
 <header>
   <h2 class="main__year">{{model.id}}</h2>
+  {{#link-to "budget" previousId class="main__year-control"}}
+    <i class="fa fa-chevron-left"></i>
+  {{/link-to}}
+  {{#link-to "budget" nextId class="main__year-control"}}
+    <i class="fa fa-chevron-right"></i>
+  {{/link-to}}
 </header>
 
 <table class="main__table budget-table">

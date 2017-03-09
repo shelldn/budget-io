@@ -4,7 +4,13 @@
   padding: $spacing-large;
 
   &__year {
+    display: inline-block;
     margin: 0;
+    font-size: 24px;
+  }
+
+  &__year-control {
+    font-size: 16px;
   }
 
   &__table {
