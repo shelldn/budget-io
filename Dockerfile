@@ -1,4 +1,12 @@
-FROM nginx:latest
+FROM node:latest
 MAINTAINER Yevgeny Shirin <yevgeny.shirin@gmail.com>
 
-COPY dist usr/share/nginx/html
+WORKDIR /code
+COPY . /code
+
+RUN \
+  npm install -g ember-cli bower && \
+  npm install && \
+  bower install --allow-root
+
+ENTRYPOINT ["ember", "server"]
