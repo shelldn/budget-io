@@ -26,8 +26,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.id.host = 'http://localhost:52138';
-    ENV.api.host = 'http://localhost:52778';
+    ENV.id.host = 'http://localhost:8081';
+    ENV.api.host = 'http://localhost:8080';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
