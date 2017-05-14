@@ -10,7 +10,7 @@ const OpsYearComponent = Em.Component.extend({
     return `budget-table__${type}-header`;
   },
 
-  @computed('categorySet', 'type')
+  @computed('categorySet.@each', 'type')
   categories(categorySet, type) {
     return categorySet.filterBy('type', type);
   },
