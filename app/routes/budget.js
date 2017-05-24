@@ -4,7 +4,11 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model({ budget_id }) {
-    return this.store.findRecord('budget', budget_id);
+    return this.store.findRecord('budget', budget_id)
+      .then(b => {
+        b.get('operations');
+        return b;
+      });
   }
 
 });
